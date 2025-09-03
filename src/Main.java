@@ -2,15 +2,30 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        /*1. Crear dos variables de tipo Integer,si son divisibles
+        por 3 y 5 convertirlos en String y concatenarlos.*/
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+
+
+
+
+        /* 2. Crear una función que reciba un double, lo convierta a
+        String y compare su orden con otro número convertido.*/
+
+
+
+
+
+        /*3. Crear una función que reciba una fecha de ingreso y
+        calcule los años de antigüedad.*/
+
+
+        
+
+
+
+
+
     }
 
 
