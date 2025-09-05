@@ -9,7 +9,7 @@ public class Clase1 {
     public static void main(String[] args) {
 
         /*Creando las primeras variables en Java. En este caso serán cinco: nombre,
-apellido,edad,peso y altura. Asignaremos un valor acorde a su tipo y se
+apellido,edad,peso y altgitura. Asignaremos un valor acorde a su tipo y se
 visualizará por consola.
          */
 
