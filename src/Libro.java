@@ -1,3 +1,5 @@
+import java.security.PublicKey;
+
 public class Libro {
 
     private String titulo;
@@ -7,6 +9,7 @@ public class Libro {
     private double venta;
     private char sector;
     private int codigounico;
+    private static final double COMISION_PORCENTAJE = 0.05;
 
     //constructor
     public Libro(String nuevoTitulo, String autor, int stock, double costo, double venta, char sector, int codigo) {
@@ -93,13 +96,20 @@ public class Libro {
 
     }
 
+    //La librería aplica un porcentaje del 5% de comisión sobre cada libro, por el momento no se modifica.
+    // restar 5% a la ganancia
+
+    public double calcularComision(){
+        return COMISION_PORCENTAJE * this.venta;
+    }
+
+    //Se establece un stock mínimo recomendado de 5 unidades para todos los libros que puede actualizarse a nivel general.
+
+
+
+
 
 }
-
-
-// pagina 5 de ejercicios, repasar escanner y ultimos digitos del codigo
-//
-
 
 
 
