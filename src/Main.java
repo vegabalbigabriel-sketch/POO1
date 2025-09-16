@@ -2,6 +2,9 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        System.out.println(Calculadora.adivinarNumero());
+
+
         //Calculadora modelo10 = new Calculadora();
         Calculadora.elevarPotencia(2.0,3.0);
         System.out.println(Calculadora.elevarPotencia(2.0,3.0));
