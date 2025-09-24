@@ -1,5 +1,3 @@
-package ntp;
-
 public class Clase1 {
 
 
