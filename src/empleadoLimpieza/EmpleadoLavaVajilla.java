@@ -37,6 +37,10 @@ public class EmpleadoLavaVajilla extends Empleado {
         return sueldoBase-calcularDescuento();
     }
 
+//
+
+
+
 
 
 }

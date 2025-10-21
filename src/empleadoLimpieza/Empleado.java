@@ -1,5 +1,9 @@
 package empleadoLimpieza;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Objects;
+
 public class Empleado {
 
     private String nombre;
@@ -27,6 +31,12 @@ public class Empleado {
     // visualizar informacion
 
 
+    //Registrar Entrada y Salida
+    public final void registrarEntradaSalida (){
+        System.out.println("Fichó en este horario" + LocalDateTime.now());
+    }
+
+//devuelve la informacion del objeto como un texto
     @Override
     public String toString() {
         return "Empleado{" +
@@ -34,10 +44,39 @@ public class Empleado {
                 ", dni=" + dni +
                 ", sueldoBase=" + sueldoBase +
                 '}';
+    }
+
+    @Override
+    public boolean equals (Object O){
+        if (O == null || ! (O instanceof Empleado)){
+            return false;
+        }
+        //Casting
+        Empleado empleadoTransformado = (Empleado) O;
+        return Objects.equals(empleadoTransformado.dni, this.dni);
 
     }
 
+// Si es falso que el objeto que recibo es una instancia de la clase empleado retorna falso, no son iguales.
 
 
+
+//Hashcode transforma el objeto en un numero para ordenar en estructura y encontrarlo
+    @Override
+    public int hashCode (){
+        return Objects.hash(dni,nombre);
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
