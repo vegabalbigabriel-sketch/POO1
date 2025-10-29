@@ -1,6 +1,6 @@
 package empleadoLimpieza;
 
-public class EmpleadoLimpiezaGeneral extends Empleado {
+public class EmpleadoLimpiezaGeneral extends Empleado implements Transferible {
 
 
     private Integer cantidadHorasExtra;
@@ -41,8 +41,8 @@ public class EmpleadoLimpiezaGeneral extends Empleado {
     }
 
 
-
-
-
-
+    @Override
+    public void transferir(String sector) {
+        System.out.println(sector);
+    }
 }

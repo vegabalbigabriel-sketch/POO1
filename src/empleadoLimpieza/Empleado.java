@@ -1,10 +1,9 @@
 package empleadoLimpieza;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Empleado {
+public abstract class Empleado implements Comparable<Empleado>{
 
     private String nombre;
     private Integer dni;
@@ -20,12 +19,7 @@ public class Empleado {
 
     //calcular sueldo Double
 
-    public Double calcularSueldoBase (){
-
-        return this.sueldoBase;
-
-    };
-
+    public abstract Double calcularSueldoBase();
 
 
     // visualizar informacion
@@ -67,8 +61,18 @@ public class Empleado {
         return Objects.hash(dni,nombre);
     }
 
-}
 
+
+    //Orden por dni
+    @Override
+    public int compareTo (Empleado o){
+        return dni.compareTo(o.dni);
+    }
+
+
+
+
+}
 
 
 
