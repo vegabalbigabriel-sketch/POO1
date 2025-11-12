@@ -36,4 +36,13 @@ public abstract class Animal {
 //Este es metodo abstracto, un contrato para las hijas o subclases
     public abstract void comer (String alimento);
 
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                '}';
+    }
 }
