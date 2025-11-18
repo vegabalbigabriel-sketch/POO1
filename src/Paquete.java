@@ -1,6 +1,6 @@
 import java.util.HashSet;
 
-public class Paquete {
+public abstract class Paquete {
 
     //atributos identificador, titulo, precio base, cantidad de dias, nombre irrepetible de excursion
 
@@ -8,15 +8,17 @@ public class Paquete {
     private String titulo;
     private Double precioBase;
     private Integer cantidadDias;
-    private HashSet <String> nombreExcursion = new HashSet();
+    private Guia guia;
+    private HashSet <String> excursiones = new HashSet();
 
     //constructor
 
-    public Paquete(Integer identificador, String titulo, Double precioBase, Integer cantidadDias) {
+    public Paquete(Integer identificador, String titulo, Double precioBase, Integer cantidadDias, Guia guia) {
         this.identificador = identificador;
         this.titulo = titulo;
         this.precioBase = precioBase;
         this.cantidadDias = cantidadDias;
+        this.guia = guia;
     }
 
     @Override
@@ -26,15 +28,66 @@ public class Paquete {
                 ", titulo='" + titulo + '\'' +
                 ", precioBase=" + precioBase +
                 ", cantidadDias=" + cantidadDias +
-                ", nombreExcursion=" + nombreExcursion +
+                ", nombreExcursion=" + excursiones +
                 '}';
     }
 
 
-    //Añadir o eliminar excursiones
+    //Set y Get del precio base, para calcular el precio final
+    public Double getPrecioBase() {
+        return precioBase;
+    }
+
+    public void setPrecioBase(Double precioBase) {
+        this.precioBase = precioBase;
+    }
+
+    //Cantidad de excursiones
+
+    public abstract Double CalcularPrecioFinal (Integer numeroExcursiones);
 
 
+    //Añadir, confirmar o eliminar excursiones
 
+//Añadir
+
+    public void Añadir (String nombreExcursion) {
+        if (excursiones.contains(nombreExcursion)) {
+            System.err.println("El nombre ya se encuentra en la lista. ");
+        }else{
+            excursiones.add(nombreExcursion);
+        }
+    }
+
+    //Consultar
+
+    public void Consultar (String nombreExcursion) {
+        if (excursiones.contains(nombreExcursion)) {
+            System.err.println("El nombre ya se encuentra en la lista. ");
+        } else {
+            System.out.println("El nombre no se encuentra en la lista");
+        }
+    }
+// Eliminar
+//
+     public void Eliminar (String nombreExcursion) {
+         if (excursiones.contains(nombreExcursion)) {
+             //Eliminar
+             excursiones.remove(nombreExcursion);
+             System.err.println("El nombre sera eliminado");
+         } else {
+             System.out.println("El nombre no esta en la lista");
+         }
+        }
+
+        //Consultar toda la lista
+
+    public void Lista (){
+       for(String excursion : this.excursiones)
+       {
+           System.out.println(excursion);
+       }
+    }
 
 
 

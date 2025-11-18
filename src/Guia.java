@@ -12,4 +12,13 @@ public class Guia {
         this.dni = dni;
         this.matricula = matricula;
     }
+
+    @Override
+    public String toString() {
+        return "Guia{" +
+                "nombre='" + nombre + '\'' +
+                ", dni=" + dni +
+                ", matricula=" + matricula +
+                '}';
+    }
 }
