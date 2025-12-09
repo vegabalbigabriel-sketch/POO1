@@ -44,7 +44,7 @@ public abstract class Paquete {
 
     //Cantidad de excursiones
 
-    public abstract Double CalcularPrecioFinal (Integer numeroExcursiones);
+    public abstract Double CalcularPrecioFinal ();
 
 
     //Añadir, confirmar o eliminar excursiones
@@ -90,7 +90,7 @@ public abstract class Paquete {
     }
 
 
-
-
-
+    public HashSet<String> getExcursiones() {
+        return excursiones;
+    }
 }

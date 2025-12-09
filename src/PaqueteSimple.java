@@ -1,7 +1,7 @@
 public class PaqueteSimple extends Paquete{
 
 
-    private Integer codigoDescuento;
+    private boolean descuento = false;
     private Integer PORCENTAJEPOREXCURSION = 10;
 
 
@@ -22,7 +22,13 @@ public class PaqueteSimple extends Paquete{
     }
 
     @Override
-    public Double CalcularPrecioFinal(Integer numeroExcursiones) {
-        return this.getPrecioBase() + numeroExcursiones * PORCENTAJEPOREXCURSION * this.getPrecioBase()/100;
+    public Double CalcularPrecioFinal() {
+        double valor=this.getPrecioBase() + getExcursiones().size() * (PORCENTAJEPOREXCURSION * this.getPrecioBase()/100);
+        if (descuento){
+            return valor - (this.getPrecioBase()*0.25);
+        }
+        System.out.println(valor);
+        return valor;
+
     }
 }

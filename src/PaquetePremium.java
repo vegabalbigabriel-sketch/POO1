@@ -1,4 +1,4 @@
-public class PaquetePremium extends Paquete{
+public class PaquetePremium extends Paquete implements Personalizable {
 
 
     private Integer puntosAcumulados;
@@ -6,8 +6,8 @@ public class PaquetePremium extends Paquete{
     private boolean voucher;
 
 
-    public PaquetePremium(Integer identificador, String titulo, Double precioBase, Integer cantidadDias, Integer PORCENTAJEPOREXCURSION, Guia guia) {
-        super(identificador, titulo, precioBase, cantidadDias,guia);
+    public PaquetePremium(Integer identificador, String titulo, Double precioBase, Integer cantidadDias, Guia guia) {
+        super(identificador, titulo, precioBase, cantidadDias, guia);
         this.PORCENTAJEPOREXCURSION = PORCENTAJEPOREXCURSION;
     }
 
@@ -22,8 +22,24 @@ public class PaquetePremium extends Paquete{
         this.PORCENTAJEPOREXCURSION = PORCENTAJEPOREXCURSION;
     }
 
+
+    //Sobre escritura de Calcular el Precio Final
     @Override
-    public Double CalcularPrecioFinal(Integer numeroExcursiones) {
-        return this.getPrecioBase() + numeroExcursiones * PORCENTAJEPOREXCURSION * this.getPrecioBase()/100;
+    public Double CalcularPrecioFinal() {
+        double valor=this.getPrecioBase() + getExcursiones().size() * (PORCENTAJEPOREXCURSION * this.getPrecioBase()/100);
+        System.out.println(valor);
+        return valor;
+
+    }
+
+//CODIGO INTERFAZ PERSONALIZACION
+@Override
+    public String añadirExcursion(String nuevaExcursion) {
+        if (getExcursiones().contains(nuevaExcursion)) {
+            System.err.println("Esta ya se encuentra en la lista. ");
+        } else {
+            getExcursiones().add(nuevaExcursion);
+        }
+        return nuevaExcursion;
     }
 }
